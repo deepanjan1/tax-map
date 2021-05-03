@@ -22,3 +22,7 @@ export const FILING_STATUS = {
 }
 
 export const TAXEE_URL = `https://taxee.io/api/v2/calculate/${fullYear - 1}`;
+
+export const COLOR_PALETTE = {
+    
+}
