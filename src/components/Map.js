@@ -12,14 +12,14 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export default function Map() {
+export default function Map({ filing, grossIncome }) {
     const classes = useStyles();
 
     const [response, setResponse] = React.useState(null);
     const [chartConfig, setChartConfig] = React.useState(null);
 
     useEffect(() => {
-        const getAllTaxes = async() => await getIncomeTaxesForAllStates('married', 100000)
+        const getAllTaxes = async() => await getIncomeTaxesForAllStates(filing, grossIncome)
             // create color template
             .then(result => buildColors(result))
 
@@ -27,7 +27,7 @@ export default function Map() {
             .then((data) => setResponse(data))
 
         getAllTaxes();
-    }, [])
+    }, [filing, grossIncome])
 
     // useEffect(() => {
     //     statesCustomConfig();
@@ -58,7 +58,11 @@ export default function Map() {
         <div className={classes.root}>
             <Grid container direction="column" align="center">
                 <Grid item>
-                    <USAMap customize={statesCustomConfig()} onClick={mapHandler} />
+                    <USAMap 
+                        customize={statesCustomConfig()} 
+                        onClick={mapHandler} 
+                        // title={'US Tax Map'}
+                        />
                 </Grid>
                 {/* <Grid item>
                     { JSON.stringify(response) }
