@@ -27,9 +27,9 @@ export default function Map({ filing, grossIncome }) {
     const [response, setResponse] = React.useState(null);
     const [snackBarInfo, setSnackbarInfo] = React.useState({
         key: null,
-        fica: formatter.format(Math.round(null)),
-        federal: formatter.format(Math.round(null)),
-        state: formatter.format(Math.round(null)),
+        fica: null,
+        federal: null,
+        state: null,
         blendedRate: 0,
     });
     const [open, setOpen] = React.useState(false);
@@ -90,9 +90,9 @@ export default function Map({ filing, grossIncome }) {
                         variant="outlined"
                         >
                         <Typography variant='h6'>{key} Rates</Typography>
-                        <Typography>FICA: {fica}</Typography>
-                        <Typography>Federal Tax: {federal}</Typography>
-                        <Typography>State Tax: {state}</Typography>
+                        <Typography>FICA: {formatter.format(Math.round(fica))}</Typography>
+                        <Typography>Federal Tax: {formatter.format(Math.round(federal))}</Typography>
+                        <Typography>State Tax: {formatter.format(Math.round(state))}</Typography>
                         <Typography>Blended Tax Rate: {blendedRate}%</Typography>
                     </Paper>
                 </Grid>
