@@ -90,9 +90,9 @@ export default function Map({ filing, grossIncome }) {
                         variant="outlined"
                         >
                         <Typography variant='h6'>{key} Rates</Typography>
-                        <Typography>FICA: ${fica}</Typography>
-                        <Typography>Federal Tax: ${federal}</Typography>
-                        <Typography>State Tax: ${state}</Typography>
+                        <Typography>FICA: {fica}</Typography>
+                        <Typography>Federal Tax: {federal}</Typography>
+                        <Typography>State Tax: {state}</Typography>
                         <Typography>Blended Tax Rate: {blendedRate}%</Typography>
                     </Paper>
                 </Grid>

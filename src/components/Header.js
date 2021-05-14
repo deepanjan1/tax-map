@@ -18,7 +18,7 @@ export default function Header() {
     return (
         <div className={classes.root}>
             <AppBar position="sticky" className={classes.appBar}>
-                <Typography variant="h4" className={classes.title}>Tax Map</Typography>
+                <Typography variant="h4" className={classes.title}>Map My Taxes</Typography>
             </AppBar>
         </div>
     );
